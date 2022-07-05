@@ -1,0 +1,15 @@
+<h1>Index Page</h1>
+
+<%= link_to new_article_path do %>
+  Create new Article
+<% end %>
+
+<% @articles.each do |article| %>
+  <!-- renders the _article.html.erb partial -->
+  <%= link_to show_article_path(article.id) do %>
+    Go To Article
+  <% end %>
+
+  <%= render "article", article: article %>
+<% end %>
+<%= @test %>
